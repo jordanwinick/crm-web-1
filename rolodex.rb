@@ -106,9 +106,6 @@ class Rolodex
       toprint = @contacts.select { |contact| contact.note == search }
       toprint.each {|contact| contact.to_s}
     end
-
-
-
   end
 
   def delete_contact
