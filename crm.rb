@@ -1,9 +1,25 @@
 require 'sinatra'
 require 'faker'
-require_relative 'contact'
+require 'rubygems'
+require 'data_mapper'
 require_relative 'rolodex'
 
 $rolodex= Rolodex.new
+
+DataMapper.setup(:default, "sqlite3:database.sqlite3")
+
+class Contact
+  include DataMapper::Resource
+
+  property :id, Serial
+  property :first_name, String
+  property :last_name, String
+  property :email, String
+  property :note, String
+
+end
+DataMapper.finalize
+DataMapper.auto_upgrade!
 
 get '/' do
   @crm_app_name = "JJ's CRM"
@@ -38,4 +54,4 @@ post '/display_contact' do
 end
 	
 
-
+# end

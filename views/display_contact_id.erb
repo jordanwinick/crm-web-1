@@ -1,3 +1,8 @@
 <ul>
-    <li><%= $rolodex.contacts[$rolodex.find(params[:id].to_i)].first_name %> <%= $rolodex.contacts[$rolodex.find(params[:id].to_i)].last_name %></li>
+	<% index=$rolodex.find(params[:id].to_i) %>
+	<% contact = $rolodex.contacts[index] %>
+	<h1><%= contact.first_name %> <%= contact.last_name %></h1>
+	<p><strong>Email:</strong> <%= contact.email %></p>
+	<p><strong>Note:</strong></p>
+	<p><%= contact.note %></p>
 </ul>

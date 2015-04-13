@@ -4,7 +4,7 @@ class Rolodex
   def initialize
     @contacts = []
     @id = 1000
-    100.times {add(Contact.new(Faker::Name.first_name, Faker::Name.last_name, Faker::Internet.email, Faker::Hacker.say_something_smart))}
+    #100.times {add(Contact.new(Faker::Name.first_name, Faker::Name.last_name, Faker::Internet.email, Faker::Hacker.say_something_smart))}
   end
 
   def contacts
